@@ -1,8 +1,14 @@
-// Secret Key/Password for Store Settings
-const ADMIN_PASSWORD = "milkshopadmin";
+// Default Password jo pehli dafa set hoga
+const DEFAULT_PASSWORD = "milkshopadmin";
 
-// Load saved images from LocalStorage on startup
+// Check if password or custom images are already saved on launch
 window.addEventListener('DOMContentLoaded', () => {
+    // 1. Password check
+    if (!localStorage.getItem('adminPass')) {
+        localStorage.setItem('adminPass', DEFAULT_PASSWORD);
+    }
+
+    // 2. Images check
     const savedImg1 = localStorage.getItem('milkShopImg1');
     const savedImg2 = localStorage.getItem('milkShopImg2');
 
@@ -14,32 +20,48 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Modal triggers
-function openAdminModal() {
-    document.getElementById('adminModal').classList.remove('hidden');
+// Show & Hide Login Popup
+function showLogin() {
+    document.getElementById('loginModal').classList.remove('hidden');
 }
 
-// Close Admin Modal
-function closeAdminModal() {
-    document.getElementById('adminModal').classList.add('hidden');
-    // Reset input fields
+function closeLogin() {
+    document.getElementById('loginModal').classList.add('hidden');
     document.getElementById('adminPassword').value = '';
-    document.getElementById('authSection').classList.remove('hidden');
-    document.getElementById('uploadSection').classList.add('hidden');
 }
 
-// Verify Password Step
+// Verify Password
 function verifyPassword() {
     const enteredPass = document.getElementById('adminPassword').value;
-    if (enteredPass === ADMIN_PASSWORD) {
-        document.getElementById('authSection').classList.add('hidden');
-        document.getElementById('uploadSection').classList.remove('hidden');
+    const correctPass = localStorage.getItem('adminPass');
+
+    if (enteredPass === correctPass) {
+        // Hide Main storefront & Login popup
+        document.getElementById('storefront').classList.add('hidden');
+        document.getElementById('loginModal').classList.add('hidden');
+        
+        // Show Secret Admin page
+        document.getElementById('adminPanel').classList.remove('hidden');
     } else {
         alert("Ghalat Password! Dobara koshish karein.");
     }
 }
 
-// Save Images from Admin Panel to local storage
+// Change Password from Admin Panel
+function changePassword() {
+    const newPass = document.getElementById('newPassInput').value;
+    
+    if (newPass.trim() === "") {
+        alert("Password khali nahi ho sakta!");
+        return;
+    }
+
+    localStorage.setItem('adminPass', newPass);
+    alert("Kamyabi! Admin Panel ka password badal diya gaya hai.");
+    document.getElementById('newPassInput').value = '';
+}
+
+// Upload & Save Images using LocalStorage
 function saveImages() {
     const file1 = document.getElementById('imageInput1').files[0];
     const file2 = document.getElementById('imageInput2').files[0];
@@ -72,9 +94,13 @@ function saveImages() {
         }
     });
 
-    // Trigger when both images are loaded and stored
     Promise.all([p1, p2]).then(() => {
-        alert("Shabaash! Images kamyabi se badal di gayi hain.");
-        closeAdminModal();
+        alert("Images kamyabi se upload ho kar website par lag chuki hain!");
     });
+}
+
+// Exit Admin Panel & Go back to Storefront
+function logoutAdmin() {
+    document.getElementById('adminPanel').classList.add('hidden');
+    document.getElementById('storefront').classList.remove('hidden');
 }
