@@ -3,436 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fresh Milk Shop</title>
-    <style>
-        :root {
-            --primary: #0077b6;
-            --secondary: #caf0f8;
-            --dark: #03045e;
-            --light: #f8f9fa;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--light);
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* Header */
-        header {
-            background-color: var(--primary);
-            color: white;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        #shop-title {
-            cursor: pointer;
-            user-select: none;
-            font-size: 2.5rem;
-        }
-
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        /* Main Container */
-        .container {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-
-        /* Intro Section */
-        .intro {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .intro h2 {
-            color: var(--dark);
-            margin-bottom: 10px;
-        }
-
-        /* Products Grid */
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5s);
-        }
-
-        .product-img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            background-color: #eee;
-        }
-
-        .product-info {
-            padding: 20px;
-        }
-
-        .product-info h3 {
-            color: var(--dark);
-            margin-bottom: 10px;
-        }
-
-        .price {
-            font-size: 1.3rem;
-            color: var(--primary);
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        /* Buttons styling */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: background 0.3s;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            font-size: 1rem;
-            margin-bottom: 10px;
-        }
-
-        .btn-whatsapp {
-            background-color: #25D366;
-            color: white;
-        }
-
-        .btn-whatsapp:hover {
-            background-color: #1ebd59;
-        }
-
-        .btn-map {
-            background-color: #db4437;
-            color: white;
-        }
-
-        .btn-map:hover {
-            background-color: #c53929;
-        }
-
-        /* Action Section */
-        .actions-box {
-            background: var(--secondary);
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        /* Secret Admin Modal */
-        #admin-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.7);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .admin-content {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 500px;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-
-        .admin-content h2 {
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .admin-buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .btn-save {
-            background: var(--primary);
-            color: white;
-        }
-
-        .btn-close {
-            background: #6c757d;
-            color: white;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #eee;
-            margin-top: 50px;
-            font-size: 0.9rem;
-        }
-    </style>
+    <title>The Milk Gallery - Premium Fresh Milk Shop</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header (Double Click title to open Admin) -->
-    <header>
-        <h1 id="shop-title" title="Double click to edit">Fresh Milk Shop</h1>
-        <p id="shop-tagline">Khalis aur Sehat Baksh Doodh Aapki Dehleez Par</p>
+    <!-- Premium Header -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo-area">
+                <span class="logo-icon">
+                    <i class="fa-solid fa-cow"></i>
+                </span>
+                <div class="logo-text">
+                    <span class="logo-subtitle">The Royal</span>
+                    <h1 class="logo-title">Milk Gallery</h1>
+                </div>
+            </div>
+            <a href="https://maps.app.goo.gl/Mc3MHHQwrt6v5DzV9" target="_blank" class="btn-location">
+                <i class="fa-solid fa-map-pin"></i> Find Our Shop
+            </a>
+        </div>
     </header>
 
-    <div class="container">
-        
-        <div class="intro">
-            <h2>Hamari Products</h2>
-            <p>Hum behtareen aur khalis dairy products faraham karte hain.</p>
-        </div>
+    <main class="container main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <span class="badge">100% Organic & Raw Milk</span>
+            <h2 class="hero-title">Sehat Aur Zayqa, <br><span class="text-gold">Har Boond Me Khalis!</span></h2>
+            <p class="hero-desc">
+                Direct farm se aap tak pohanchne wala doodh, jo har qisam ki milawat aur chemical se bilkul pak hai.
+            </p>
+        </section>
 
-        <!-- Products Grid -->
-        <div class="products">
-            <!-- Product 1 -->
+        <!-- Products Display -->
+        <section class="products-grid">
+            <!-- Card 1 -->
             <div class="product-card">
-                <img id="prod1-img-view" class="product-img" src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&q=80&w=500" alt="Product 1">
-                <div class="product-info">
-                    <h3 id="prod1-title-view">Khalis Doodh (Milk)</h3>
-                    <p class="price">Rs. <span id="prod1-price-view">240</span> / Liter</p>
-                    <a id="wa-link-1" href="https://wa.me/923019215448?text=Assalam-o-Alaikum! Mujhe 1 Liter Khalis Doodh chahiye." target="_blank" class="btn btn-whatsapp">
-                        Order on WhatsApp
-                    </a>
+                <div class="card-image-wrapper">
+                    <img id="shopImg1" src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&q=80&w=800" alt="Fresh Milk">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="card-body">
+                    <span class="card-badge">Best Seller</span>
+                    <h3 class="card-title">Pure Buffalo Milk</h3>
+                    <p class="card-text">Ghara, khalis, aur mazaidar doodh jo bachon aur baron sab ki sehat ke liye lajawab hai.</p>
                 </div>
             </div>
 
-            <!-- Product 2 -->
+            <!-- Card 2 -->
             <div class="product-card">
-                <img id="prod2-img-view" class="product-img" src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&q=80&w=500" alt="Product 2">
-                <div class="product-info">
-                    <h3 id="prod2-title-view">Taza Dahi (Yogurt)</h3>
-                    <p class="price">Rs. <span id="prod2-price-view">280</span> / KG</p>
-                    <a id="wa-link-2" href="https://wa.me/923019215448?text=Assalam-o-Alaikum! Mujhe 1 KG Taza Dahi chahiye." target="_blank" class="btn btn-whatsapp">
-                        Order on WhatsApp
-                    </a>
+                <div class="card-image-wrapper">
+                    <img id="shopImg2" src="https://images.unsplash.com/photo-1528498033373-3c6c08e93d79?auto=format&fit=crop&q=80&w=800" alt="Premium Dairy">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="card-body">
+                    <span class="card-badge">Organic Quality</span>
+                    <h3 class="card-title">Desi Makhan & Yogurt</h3>
+                    <p class="card-text">Hamare paas bilkul taza dahi, desi ghee aur makkhan bhi munasib rate par milta hai.</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Location & Direct Order -->
-        <div class="actions-box">
-            <h3>Hum Se Raabta Karein</h3>
-            <p style="margin-bottom: 20px;">Aap niche diye gaye buttons se direct hamari shop ki location dekh sakte hain ya direct WhatsApp par rabta kar sakte hain.</p>
-            <a href="https://maps.app.goo.gl/Mc3MHHQwrt6v5DzV9" target="_blank" class="btn btn-map" style="max-width: 300px; margin: 5px auto;">
-                📍 View Shop Location (Google Map)
+        <!-- Order Action Card -->
+        <section class="order-cta">
+            <div class="cta-glow-1"></div>
+            <div class="cta-glow-2"></div>
+            <span class="cta-badge"><i class="fa-solid fa-bolt"></i> Quick Service</span>
+            <h3 class="cta-title">Abhi Apna Order Lock Karein</h3>
+            <p class="cta-desc">Niche button par click karein aur WhatsApp par apni marzi ka order likh kar bheinjein.</p>
+            
+            <!-- WhatsApp Button -->
+            <a href="https://wa.me/923019215448?text=Assalam-o-Alaikum!%20Mujhe%20apne%20milk%20shop%20se%20order%20karwana%20hai." target="_blank" class="btn-whatsapp">
+                <i class="fa-brands fa-whatsapp"></i> Order via WhatsApp (03019215448)
             </a>
-            <a href="https://wa.me/923019215448?text=Assalam-o-Alaikum! Mujhe shop se kuch order karna hai." target="_blank" class="btn btn-whatsapp" style="max-width: 300px; margin: 5px auto;">
-                💬 Direct WhatsApp Chat
-            </a>
-        </div>
+        </section>
+    </main>
 
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Fresh Milk Shop. All Rights Reserved.</p>
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p>&copy; 2026 The Milk Gallery. Crafted with Excellence.</p>
+        <!-- Secret Dot for Admin Panel -->
+        <span onclick="openAdminModal()" class="secret-dot">.</span>
     </footer>
 
     <!-- Secret Admin Modal -->
-    <div id="admin-modal">
-        <div class="admin-content">
-            <h2>Admin Panel</h2>
+    <div id="adminModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button onclick="closeAdminModal()" class="modal-close-btn">&times;</button>
+            <h3 class="modal-title">Store Settings</h3>
+            <p class="modal-desc">Enter key details to adjust the custom storefront images.</p>
             
-            <div class="form-group">
-                <label>Shop Name:</label>
-                <input type="text" id="edit-shop-title">
-            </div>
-            
-            <hr style="margin: 15px 0;">
-            
-            <h3>Product 1 Settings</h3>
-            <div class="form-group">
-                <label>Product 1 Name:</label>
-                <input type="text" id="edit-prod1-title">
-            </div>
-            <div class="form-group">
-                <label>Product 1 Price (Rs):</label>
-                <input type="number" id="edit-prod1-price">
-            </div>
-            <div class="form-group">
-                <label>Product 1 Image (Laptop se select karein):</label>
-                <input type="file" id="edit-prod1-img" accept="image/*">
+            <!-- Auth Step -->
+            <div id="authSection">
+                <label class="input-label">Access Token / Password:</label>
+                <input type="password" id="adminPassword" class="form-input" placeholder="••••••••">
+                <button onclick="verifyPassword()" class="btn-submit">Authorize</button>
             </div>
 
-            <hr style="margin: 15px 0;">
+            <!-- Upload Step -->
+            <div id="uploadSection" class="hidden">
+                <div class="success-alert">
+                    <i class="fa-solid fa-lock-open"></i> Access granted. Set your store layout.
+                </div>
+                
+                <div class="form-group">
+                    <label class="input-label">Store Image 1 (Primary Product):</label>
+                    <input type="file" id="imageInput1" accept="image/*" class="file-input">
+                </div>
 
-            <h3>Product 2 Settings</h3>
-            <div class="form-group">
-                <label>Product 2 Name:</label>
-                <input type="text" id="edit-prod2-title">
-            </div>
-            <div class="form-group">
-                <label>Product 2 Price (Rs):</label>
-                <input type="number" id="edit-prod2-price">
-            </div>
-            <div class="form-group">
-                <label>Product 2 Image (Laptop se select karein):</label>
-                <input type="file" id="edit-prod2-img" accept="image/*">
-            </div>
+                <div class="form-group">
+                    <label class="input-label">Store Image 2 (Secondary Product):</label>
+                    <input type="file" id="imageInput2" accept="image/*" class="file-input">
+                </div>
 
-            <div class="admin-buttons">
-                <button onclick="saveAdminData()" class="btn btn-save">Save Changes</button>
-                <button onclick="closeAdmin()" class="btn btn-close">Close</button>
+                <button onclick="saveImages()" class="btn-save">Publish Live Changes</button>
             </div>
         </div>
     </div>
 
-    <script>
-        // Default Password: milk123
-        const ADMIN_PASSWORD = "milk123";
-
-        // Double Click on Shop Title to Open Admin Panel
-        document.getElementById('shop-title').addEventListener('dblclick', function() {
-            let passwordInput = prompt("Enter Secret Admin Password:");
-            if (passwordInput === ADMIN_PASSWORD) {
-                openAdmin();
-            } else if (passwordInput !== null) {
-                alert("Wrong Password!");
-            }
-        });
-
-        function openAdmin() {
-            document.getElementById('edit-shop-title').value = document.getElementById('shop-title').innerText;
-            document.getElementById('edit-prod1-title').value = document.getElementById('prod1-title-view').innerText;
-            document.getElementById('edit-prod1-price').value = document.getElementById('prod1-price-view').innerText;
-            document.getElementById('edit-prod2-title').value = document.getElementById('prod2-title-view').innerText;
-            document.getElementById('edit-prod2-price').value = document.getElementById('prod2-price-view').innerText;
-            
-            document.getElementById('admin-modal').style.display = 'flex';
-        }
-
-        function closeAdmin() {
-            document.getElementById('admin-modal').style.display = 'none';
-        }
-
-        // Save data to localStorage (including converted base64 images)
-        function saveAdminData() {
-            const shopTitle = document.getElementById('edit-shop-title').value;
-            const prod1Title = document.getElementById('edit-prod1-title').value;
-            const prod1Price = document.getElementById('edit-prod1-price').value;
-            const prod2Title = document.getElementById('edit-prod2-title').value;
-            const prod2Price = document.getElementById('edit-prod2-price').value;
-
-            localStorage.setItem('shopTitle', shopTitle);
-            localStorage.setItem('prod1Title', prod1Title);
-            localStorage.setItem('prod1Price', prod1Price);
-            localStorage.setItem('prod2Title', prod2Title);
-            localStorage.setItem('prod2Price', prod2Price);
-
-            // Handle Image 1 Upload
-            const img1File = document.getElementById('edit-prod1-img').files[0];
-            if (img1File) {
-                const reader = new FileReader();
-                reader.onloadend = function() {
-                    localStorage.setItem('prod1Img', reader.result);
-                    document.getElementById('prod1-img-view').src = reader.result;
-                }
-                reader.readAsDataURL(img1File);
-            }
-
-            // Handle Image 2 Upload
-            const img2File = document.getElementById('edit-prod2-img').files[0];
-            if (img2File) {
-                const reader = new FileReader();
-                reader.onloadend = function() {
-                    localStorage.setItem('prod2Img', reader.result);
-                    document.getElementById('prod2-img-view').src = reader.result;
-                }
-                reader.readAsDataURL(img2File);
-            }
-
-            // Update DOM Texts directly
-            document.getElementById('shop-title').innerText = shopTitle;
-            document.getElementById('prod1-title-view').innerText = prod1Title;
-            document.getElementById('prod1-price-view').innerText = prod1Price;
-            document.getElementById('prod2-title-view').innerText = prod2Title;
-            document.getElementById('prod2-price-view').innerText = prod2Price;
-
-            // Update WhatsApp Link texts dynamically
-            document.getElementById('wa-link-1').href = `https://wa.me/923019215448?text=Assalam-o-Alaikum! Mujhe 1 Liter ${prod1Title} chahiye.`;
-            document.getElementById('wa-link-2').href = `https://wa.me/923019215448?text=Assalam-o-Alaikum! Mujhe 1 KG ${prod2Title} chahiye.`;
-
-            alert("Website details successfully updated!");
-            closeAdmin();
-        }
-
-        // Load saved data on page load
-        window.onload = function() {
-            if (localStorage.getItem('shopTitle')) {
-                document.getElementById('shop-title').innerText = localStorage.getItem('shopTitle');
-            }
-            if (localStorage.getItem('prod1Title')) {
-                document.getElementById('prod1-title-view').innerText = localStorage.getItem('prod1Title');
-                document.getElementById('prod1-price-view').innerText = localStorage.getItem('prod1Price');
-                document.getElementById('wa-link-1').href = `https://wa.me/923019215448?text=Assalam-o-Alaikum! Mujhe 1 Liter ${localStorage.getItem('prod1Title')} chahiye.`;
-            }
-            if (localStorage.getItem('prod2Title')) {
-                document.getElementById('prod2-title-view').innerText = localStorage.getItem('prod2Title');
-                document.getElementById('prod2-price-view').innerText = localStorage.getItem('prod2Price');
-                document.getElementById('wa-link-2').href = `https://wa.me/923019215448?text=Assalam-o-Alaikum! Mujhe 1 KG ${localStorage.getItem('prod2Title')} chahiye.`;
-            }
-            if (localStorage.getItem('prod1Img')) {
-                document.getElementById('prod1-img-view').src = localStorage.getItem('prod1Img');
-            }
-            if (localStorage.getItem('prod2Img')) {
-                document.getElementById('prod2-img-view').src = localStorage.getItem('prod2Img');
-            }
-        }
-    </script>
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
