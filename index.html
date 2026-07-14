@@ -1,127 +1,82 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Milk Gallery</title>
+    <title>The Milk Gallery | Premium Fresh Dairy</title>
     <!-- Google Fonts & FontAwesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Main Storefront Website -->
-    <div id="storefront">
-        <header class="main-header">
-            <div class="container header-container">
-                <div class="logo">
-                    <span class="logo-icon"><i class="fa-solid fa-cow"></i></span>
-                    <span class="logo-text">Milk Gallery</span>
-                </div>
-                <a href="https://maps.app.goo.gl/Mc3MHHQwrt6v5DzV9" target="_blank" class="btn-location">
-                    <i class="fa-solid fa-map-location-dot"></i> Shop Location
-                </a>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="brand">
+                <span class="brand-icon"><i class="fa-solid fa-cow"></i></span>
+                <span class="brand-name">Milk<span>Gallery</span></span>
             </div>
-        </header>
-
-        <main class="container main-content">
-            <section class="hero">
-                <span class="badge">Pure & Fresh</span>
-                <h2>Sehat Aur Zayqa, <br><span class="highlight">Har Boond Me Khalis!</span></h2>
-                <p>Hamara doodh bilkul khalis, taza aur har qisam ki milawat se pak hai.</p>
-            </section>
-
-            <section class="products-grid">
-                <div class="card">
-                    <div class="card-img">
-                        <img id="shopImg1" src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&q=80&w=800" alt="Fresh Milk">
-                    </div>
-                    <div class="card-desc">
-                        <h3>Pure Buffalo Milk</h3>
-                        <p>Ghara aur mazaidar doodh jo sehat ke liye lajawab hai.</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-img">
-                        <img id="shopImg2" src="https://images.unsplash.com/photo-1528498033373-3c6c08e93d79?auto=format&fit=crop&q=80&w=800" alt="Dairy Products">
-                    </div>
-                    <div class="card-desc">
-                        <h3>Desi Butter & Yogurt</h3>
-                        <p>Khalis makkhan, dahi aur ghee munasib rate par dastiyab hain.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="order-section">
-                <h3>Abhi Apna Order Lock Karein</h3>
-                <p>Niche button par click karke WhatsApp par order send karein.</p>
-                <a href="https://wa.me/923019215448?text=Assalam-o-Alaikum!%20Mujhe%20apne%20milk%20shop%20se%20order%20karwana%20hai." target="_blank" class="btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Order via WhatsApp
-                </a>
-            </section>
-        </main>
-
-        <footer class="main-footer">
-            <p>&copy; 2026 The Milk Gallery. All Rights Reserved.</p>
-            <!-- Secret Dot to Open Admin Panel Login -->
-            <span onclick="showLogin()" class="secret-dot">.</span>
-        </footer>
-    </div>
-
-    <!-- 1. Password Verification Popup -->
-    <div id="loginModal" class="modal-overlay hidden">
-        <div class="modal-content">
-            <h3>Enter Admin Password</h3>
-            <input type="password" id="adminPassword" class="form-input" placeholder="••••••••">
-            <div class="modal-actions">
-                <button onclick="verifyPassword()" class="btn-primary">Verify</button>
-                <button onclick="closeLogin()" class="btn-secondary">Cancel</button>
-            </div>
+            <!-- Location Button -->
+            <a href="https://maps.app.goo.gl/Mc3MHHQwrt6v5DzV9" target="_blank" class="loc-btn">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <span>Shop Location</span>
+            </a>
         </div>
-    </div>
+    </header>
 
-    <!-- 2. Secret Page (Naya Premium Admin Panel) -->
-    <div id="adminPanel" class="admin-page hidden">
-        <header class="admin-header">
-            <div class="container admin-nav">
-                <h2><i class="fa-solid fa-screwdriver-wrench"></i> Control Panel</h2>
-                <button onclick="logoutAdmin()" class="btn-logout"><i class="fa-solid fa-right-from-bracket"></i> Exit Panel</button>
-            </div>
-        </header>
+    <!-- Hero Area -->
+    <main class="container main-content">
+        <section class="hero">
+            <span class="badge">Pure & Organic</span>
+            <h1>Khalis Doodh, <br><span class="serif-text">Sehat Ki Pehchan!</span></h1>
+            <p>Hamara doodh bilkul taza aur har qisam ki milawat se pak hai. Aapki sehat hamari pehli tarjeeh hai.</p>
+        </section>
 
-        <main class="container admin-content-area">
-            <!-- Settings Card -->
-            <div class="admin-card">
-                <h3><i class="fa-solid fa-lock"></i> Security settings</h3>
-                <p class="section-desc">Yahan se aap admin panel ka password change kar sakte hain.</p>
-                <div class="form-group">
-                    <label>New Password:</label>
-                    <input type="password" id="newPassInput" class="form-input" placeholder="Enter new password">
+        <!-- Dynamic Product Cards -->
+        <section class="products-grid">
+            <div class="product-card">
+                <div class="img-wrapper">
+                    <img id="shopImg1" src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&q=80&w=800" alt="Fresh Buffalo Milk">
                 </div>
-                <button onclick="changePassword()" class="btn-primary">Update Password</button>
+                <div class="card-details">
+                    <span class="tag">Dairy Premium</span>
+                    <h3>Fresh Buffalo Milk</h3>
+                    <p>Ghara aur zayqedaar doodh jo har ghar ki zaroorat hai.</p>
+                </div>
             </div>
 
-            <!-- Upload Card -->
-            <div class="admin-card">
-                <h3><i class="fa-solid fa-images"></i> Update Storefront Photos</h3>
-                <p class="section-desc">Apne laptop se do photos select karke website par dynamic update karein.</p>
-                
-                <div class="form-group">
-                    <label>First Image (Primary Product):</label>
-                    <input type="file" id="imageInput1" accept="image/*" class="file-input">
+            <div class="product-card">
+                <div class="img-wrapper">
+                    <img id="shopImg2" src="https://images.unsplash.com/photo-1528498033373-3c6c08e93d79?auto=format&fit=crop&q=80&w=800" alt="Pure Desi Ghee">
                 </div>
-
-                <div class="form-group">
-                    <label>Second Image (Secondary Product):</label>
-                    <input type="file" id="imageInput2" accept="image/*" class="file-input">
+                <div class="card-details">
+                    <span class="tag">Artisanal</span>
+                    <h3>Desi Ghee & Butter</h3>
+                    <p>Khalis makkhan aur khushbudaar Desi Ghee bilkul munasib rate par.</p>
                 </div>
-                
-                <button onclick="saveImages()" class="btn-save">Publish Live Changes</button>
             </div>
-        </main>
-    </div>
+        </section>
+
+        <!-- WhatsApp Order Button -->
+        <section class="cta-section">
+            <div class="cta-card">
+                <h2>Ghar Baithe Order Karein</h2>
+                <p>Niche diye gaye WhatsApp button par click karke direct order confirm karein.</p>
+                <a href="https://wa.me/923019215448?text=Assalam-o-Alaikum!%20Mujhe%20apne%20milk%20shop%20se%20order%20karwana%20hai." target="_blank" class="wa-btn">
+                    <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer with Secret Admin Door -->
+    <footer class="footer">
+        <p>&copy; 2026 Milk Gallery. All Rights Reserved.</p>
+        <!-- Secret dot to go to admin.html -->
+        <a href="admin.html" class="secret-dot">.</a>
+    </footer>
 
     <script src="script.js"></script>
 </body>
